@@ -1,5 +1,4 @@
 #include "speech_recognizer.h"
-#include <iostream>
 
 namespace Speech {
 constexpr int sampleRate = 16000;

@@ -29,12 +29,6 @@ void CommandManager::process(const std::string& text) {
         }
 }
 
-void CommandManager::registerCommand(const std::string& name,
-                                     const std::string& voiceTrigger,
-                                     std::function<void()> handler) {
-        _commands[name] = {voiceTrigger, handler};
-}
-
 void CommandManager::logTime() {
         auto now = std::chrono::system_clock::now();
         auto now_time_t = std::chrono::system_clock::to_time_t(now);
