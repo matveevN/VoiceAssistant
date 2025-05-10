@@ -2,6 +2,7 @@
 #include <chrono>
 #include <iomanip>
 
+namespace Commands {
 CommandManager::CommandManager() {
         registerCommand("start_machine", "включить станок", []() {
                 std::cout << "Станок включен\n";
@@ -42,3 +43,4 @@ void CommandManager::logTime() {
                                    "%Y-%m-%d %H:%M:%S")
                   << "] ";
 }
+} // namespace Commands

@@ -1,7 +1,7 @@
 #include "speech_recognizer.h"
 #include <iostream>
 
-namespace Speach {
+namespace Speech {
 constexpr int sampleRate = 16000;
 constexpr int framesPerBuffer = 4000;
 
@@ -77,4 +77,4 @@ SpeechRecognizer::~SpeechRecognizer() {
         vosk_recognizer_free(_recognizer);
         vosk_model_free(_model);
 }
-} // namespace Speach
+} // namespace Speech
