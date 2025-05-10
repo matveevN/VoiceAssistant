@@ -4,6 +4,7 @@
 #include <functional>
 #include <unordered_map>
 
+namespace Commands {
 class CommandManager {
 public:
         CommandManager();
@@ -24,3 +25,4 @@ private:
 
         void logTime();
 };
+} // namespace Commands

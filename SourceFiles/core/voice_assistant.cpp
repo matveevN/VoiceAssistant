@@ -2,15 +2,15 @@
 
 namespace Core {
 VoiceAssistant::VoiceAssistant() {
-        recognizer = std::make_unique<Speach::SpeechRecognizer>(
-            "/home/nikita/VoiceAssistant/Resources/models/"
+        _recognizer = std::make_unique<Speech::SpeechRecognizer>(
+            "../../Resources/models/"
             "vosk-model-small-ru-0.22",
             "[\"алиса\", \"включить станок\", \"выключить станок\", \"подать "
             "масло\"]");
 }
 
 void VoiceAssistant::processCommand(const std::string& text) {
-        commandManager.process(text); // Всё парсинг и выполнение здесь
+        _commandManager.process(text);
 }
 
 void VoiceAssistant::run() {
@@ -43,7 +43,7 @@ void VoiceAssistant::run() {
         std::cout << logo;
         std::cout << "Голосовой помощник запущен\n";
         while (true) {
-                auto text = recognizer->listen();
+                auto text = _recognizer->listen();
                 if (!text.empty()) {
                         processCommand(text);
                 }
